@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Neural Hub — AI API Gateway</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="config.js"></script>
+</head>
+<body>
+  <div class="glow glow-a"></div><div class="glow glow-b"></div>
+  <header class="top"><a class="brand" href="#"><span class="brand-mark">N</span> neural<span>hub</span></a><span class="top-note">MULTI-PROVIDER AI GATEWAY</span></header>
+  <main>
+    <section id="authView" class="auth-layout">
+      <div class="hero"><div class="eyebrow">ONE API. MANY MODELS.</div><h1>Your AI stack,<br><em>unified.</em></h1><p>Connect to supported model providers through one OpenAI-compatible API endpoint. Manage your keys from one clean dashboard.</p><div class="hero-stats"><div><b>Unified</b><small>API access</small></div><div><b>Secure</b><small>Hashed keys</small></div><div><b>Flexible</b><small>Providers</small></div></div></div>
+      <div class="panel auth-panel"><div class="tabs"><button class="tab active" id="loginTab">Sign in</button><button class="tab" id="registerTab">Create account</button></div>
+        <form id="authForm"><h2 id="formTitle">Welcome back</h2><p class="muted" id="formSubtitle">Sign in to manage your API keys.</p><label>Email<input id="email" type="email" autocomplete="email" placeholder="you@example.com" required></label><label>Password<input id="password" type="password" autocomplete="current-password" minlength="8" placeholder="At least 8 characters" required></label><button class="primary full" type="submit" id="submitAuth">Sign in <span>→</span></button><div class="message" id="authMessage"></div></form>
+      </div>
+    </section>
+    <section id="appView" class="dashboard hidden">
+      <div class="dash-head"><div><div class="eyebrow">CONTROL CENTER</div><h1>Your dashboard</h1><p class="muted" id="userEmail"></p></div><button class="ghost" id="logoutBtn">Sign out</button></div>
+      <div class="grid">
+        <article class="panel"><div class="card-title"><div><div class="eyebrow">API CREDENTIALS</div><h2>API keys</h2></div><span class="pill">PRIVATE</span></div><p class="muted">Create a key for your applications. The full key is shown only once.</p><div class="create-row"><input id="keyName" maxlength="80" placeholder="Key name (e.g. My app)"><button class="primary" id="createKey">Generate key</button></div><div id="newKeyBox" class="new-key hidden"><small>Copy this key now — it won't be shown again.</small><code id="newKeyValue"></code><button class="ghost small" id="copyKey">Copy key</button></div><div id="keysList" class="keys-list"></div></article>
+        <article class="panel"><div class="eyebrow">QUICK START</div><h2>Make your first request</h2><p class="muted">Use your generated key as a Bearer token.</p><div class="endpoint"><small>BASE URL</small><code id="baseUrl">Loading…</code></div><div class="endpoint"><small>CHAT COMPLETIONS</small><code>/v1/chat/completions</code></div><div class="endpoint"><small>MODELS</small><code>GET /v1/models</code></div><button class="ghost copy-example" id="copyExample">Copy cURL example</button></article>
+        <article class="panel wide"><div class="eyebrow">AVAILABLE MODELS</div><h2>Model catalog</h2><p class="muted">Only models belonging to configured providers are returned by the API.</p><div id="modelList" class="model-list"><span class="muted">Generate an API key to load model catalog.</span></div></article>
+      </div>
+      <footer>Neural Hub <span>·</span> API credentials are stored as hashes.</footer>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body></html>

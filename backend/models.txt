@@ -1,0 +1,5 @@
+# One model per line: provider:model-id
+# Replace/add entries from your provider list.
+openai:gpt-4.1-mini
+openai:gpt-4.1
+openrouter:openai/gpt-4.1-mini
